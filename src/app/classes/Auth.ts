@@ -14,7 +14,7 @@ export class Auth implements authProps {
             await userServices.createUser(payload).then(async (user: userProps) => {
 
                 //send the welcome mail
-                await Auth.EmailInterface.send(user?.email, 'Welcome to My Youtube Channel', 'welcome', {name: user?.username});
+                Auth.EmailInterface.send(user?.email, 'Welcome to My Youtube Channel', 'welcome', {name: user?.username});
 
                 return resolve(user);
             }).

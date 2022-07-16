@@ -11,9 +11,11 @@
 
 
 # Run on Development
-1. npm install
-2. npm run dev
-3. tsc --watch
+1. Rename .envExample to .env
+2. Goto src/app/constants/index.ts and add your api key and secret to start sending email
+3. npm install
+4. npm run dev
+5. tsc --watch
 
 
 # Run on Production

@@ -36,3 +36,27 @@ export interface authProps {
 export interface EmailInterface {
     send: (to: string, subject: string, template: string, data: any) => Promise<any>
 }
+
+export interface blogData {
+    id: string;
+    title: string;
+    content: string;
+    image: string;
+    author: string;
+    views: number;
+    createdAt: string;
+}
+
+export interface createBlogPayload {
+    title: string;
+    content: string;
+    image: string;
+    author: string;
+}
+
+export interface blogInterface {
+    getAll: () => Promise<blogData[]>;
+    createBlog: (payload: createBlogPayload) => Promise<blogData>;
+    deleteBlog: (blogId: string) => Promise<blogData>;
+    addToView: (blogId: string) => Promise<blogData>;
+}
