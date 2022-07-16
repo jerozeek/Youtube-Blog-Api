@@ -31,6 +31,7 @@
 
 TODO:
 1. Jest unit testing.
+2. Category CLI operations.
 
 
 # NODE CLI
