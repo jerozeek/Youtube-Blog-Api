@@ -21,3 +21,13 @@
 # Run on Production
 1. npm install
 2. npm run build
+
+
+# Run on Test
+1. npm install
+2. npm run test
+
+
+
+TODO:
+1. Jest unit testing.
