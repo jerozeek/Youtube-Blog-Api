@@ -1,3 +1,5 @@
+import exp from "constants";
+
 export interface FileProps {
     name: string;
     mimetype: string;
@@ -44,6 +46,7 @@ export interface blogData {
     image: string;
     author: string;
     views: number;
+    categoryId: string;
     createdAt: string;
 }
 
@@ -59,4 +62,13 @@ export interface blogInterface {
     createBlog: (payload: createBlogPayload) => Promise<blogData>;
     deleteBlog: (blogId: string) => Promise<blogData>;
     addToView: (blogId: string) => Promise<blogData>;
+}
+
+export interface categoryProps {
+    id: string;
+    name: string;
+}
+
+export interface categoryInterface {
+    getAll: () => Promise<categoryProps[]>;
 }

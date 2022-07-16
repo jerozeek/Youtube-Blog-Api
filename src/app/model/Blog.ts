@@ -14,6 +14,9 @@ class Blog extends TimeStamps {
     @prop({ required: false, ref: 'Users', type: mongoose.Schema.Types.ObjectId })
     public author: string;
 
+    @prop({ required: false, ref: 'Category', type: mongoose.Schema.Types.ObjectId })
+    public categoryId: string;
+
     @prop({ required: false, default: 0 })
     public views: number;
 }

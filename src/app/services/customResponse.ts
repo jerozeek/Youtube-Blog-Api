@@ -1,4 +1,5 @@
-import {blogData, userProps} from "../interfaces";
+import {blogData, categoryProps, userProps} from "../interfaces";
+import categoryServices from "./categoryServices";
 import userServices from "./userServices";
 
 export const customUserResponse = (data: userProps) => {
@@ -23,13 +24,13 @@ export const blogListing = async (blogs: blogData[]) => {
    return results;
 }
 
-
 export const customBlogResponse = async (data: blogData) => {
     return {
         id: data.id,
         title: data.title,
         content: data.content,
         image: data.image,
+        category: _getCategory(data.categoryId),
         author: await _getAuthor(data.author),
     }
 }
@@ -37,4 +38,12 @@ export const customBlogResponse = async (data: blogData) => {
 export const _getAuthor = async (authorId: string) => {
     const user: userProps = await userServices.findByUserId(authorId);
     return customUserResponse(user);
+}
+
+export const _getCategory = async (categoryId: string) => {
+    const category: categoryProps = await categoryServices.findByCategoryId(categoryId);
+    return {
+        id: category.id,
+        name: category.name,
+    }
 }

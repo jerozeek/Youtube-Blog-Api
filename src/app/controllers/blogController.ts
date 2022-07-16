@@ -25,7 +25,7 @@ const getAll = async (req: Request, res: Response) => {
 const createBlog = async (req: Request, res: Response) => {
     try
     {
-        const { title, content, author } = req.body;
+        const { title, content, author, categoryId } = req.body;
 
         const { error } = validateBlog.validate(req.body, {abortEarly: false});
 
@@ -41,7 +41,7 @@ const createBlog = async (req: Request, res: Response) => {
 
             if (error) return errorHandler(res, 400, error);
 
-            const payload = { title, content, author, image: result };
+            const payload = { title, content, author, image: result, categoryId };
 
             blogInstance.createBlog(payload).then(async (result) => {
                 return successHandler(res, 200, 'Blog post created successfully', await customBlogResponse(result));

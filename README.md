@@ -31,3 +31,9 @@
 
 TODO:
 1. Jest unit testing.
+
+
+# NODE CLI
+1. Generate categories: worker:category:generate
+2. View List of Generated Categories: worker:category:list
+3. Create a Custom Category: worker:category:create
