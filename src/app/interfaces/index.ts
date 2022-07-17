@@ -70,10 +70,10 @@ export interface categoryProps {
 
 export interface categoryInterface {
     getAll: () => Promise<categoryProps[]>;
+    create: (name: string) => Promise<categoryProps>;
 }
 
 export interface cliProps {
     init: () => void;
     processInput: (str: string) => void;
-    cliResponder: (str: string) => void;
 }

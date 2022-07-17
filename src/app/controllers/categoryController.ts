@@ -19,6 +19,23 @@ const fetchAll = async (req: Request, res: Response) => {
     }
 }
 
+
+const createCategory = async (req: Request, res: Response) => {
+    try {
+        const { name } = req.body;
+        categoryInstance.create(name).then((category) => {
+            return successHandler(res, 200, 'Categories created successfully', category);
+        }).
+        catch((error: Error) => {
+            return errorHandler(res, 500, error.message);
+        })
+    }
+    catch (e) {
+        return errorHandler(res, 500, 'Internal Server Error');
+    }
+}
+
 export = {
-    fetchAll
+    fetchAll,
+    createCategory
 }

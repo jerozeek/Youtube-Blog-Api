@@ -14,4 +14,15 @@ export default class Category implements categoryInterface{
         })
     }
 
+    public create(name: string): Promise<categoryProps> {
+        return new Promise((resolve, reject) => {
+            categoryServices.createCategory(name).then((category) => {
+                resolve(category);
+            }).
+            catch((error: Error) => {
+                reject({message: error.message});
+            })
+        })
+    }
+
 }

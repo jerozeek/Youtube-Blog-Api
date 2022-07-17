@@ -9,13 +9,33 @@ class _events extends events {}
 let e = new _events();
 
 //Input Handlers
-e.on('man', function (str: string){
-    cli.cliResponder(str);
+e.on('exit', function (str: string){
+    Workers.exitCli();
 })
 
 //Input Handlers
 e.on('help', function (str: string){
-    cli.cliResponder(str);
+    Workers.getCliHelps();
+})
+
+//Input Handlers
+e.on('stats', function (str: string){
+    Workers.getStats();
+})
+
+//Input Handlers
+e.on('test', function (str: string){
+    Workers.runTest();
+})
+
+//Input Handlers
+e.on('worker:get categories', async function (str: string) {
+    await Workers.getCategories();
+})
+
+//Input Handlers
+e.on('worker:create category', async function (str: string) {
+    await Workers.createNewCategory(str)
 })
 
 //Instantiate the CLI module object
@@ -58,9 +78,11 @@ let cli: cliProps = {
             //Codify the unique strings that identify the different cli commands
             let uniqueInput = [
                 "help",
-                "worker:generate category --{count}",
-                "worker:create category --{name}",
-                "worker:delete category --{id}",
+                "stats",
+                "test",
+                "worker:generate category",
+                "worker:create category",
+                "worker:delete category",
                 "worker:get categories",
                 "exit"
             ];
@@ -82,19 +104,6 @@ let cli: cliProps = {
             }
         }
     },
-
-    cliResponder: function (str: string) {
-        switch (str) {
-
-            case 'exit' :
-                Workers.exitCli();
-                break;
-
-            case 'help' :
-                Workers.getCliHelps();
-                break;
-        }
-    }
 };
 
 export = cli;
