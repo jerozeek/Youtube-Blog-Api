@@ -1,7 +1,6 @@
-import express, {Application, ErrorRequestHandler, NextFunction, Request, Response} from 'express';
+import express, {Application, ErrorRequestHandler} from 'express';
 import mongoose from 'mongoose';
 import { config } from "dotenv";
-import {Server} from "http";
 import fileUploader from "express-fileupload";
 import { v2 as cloudinary } from 'cloudinary'
 import routes = require('../routes');
@@ -18,9 +17,10 @@ export class Connections {
 
         mongoose.connect(uri, () => {
             console.log('mongoose is connected');
+            //cli.init();
         });
 
-        const server: Server = Connections.app.listen(port, () => console.log(`app listening on port ${port}!`));
+        Connections.app.listen(port, () => console.log(`app listening on port ${port}!`));
 
         //connect to cloudinary
         cloudinary.config({
@@ -42,7 +42,7 @@ export class Connections {
         //import all the route
         routes(Connections.app);
 
-        const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
+        const errorHandler: ErrorRequestHandler = (err, req, res) => {
             res.status(err.status || 500).json({
                 error: {
                     status: err.status || 500,

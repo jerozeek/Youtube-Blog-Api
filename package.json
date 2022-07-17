@@ -7,7 +7,8 @@
     "test": "jest --forceExit",
     "build": "rm -rf build/ && tsc",
     "dev": "nodemon src/app/index.ts",
-    "start": "node ./build/app/index.js"
+    "start": "node ./build/app/index.js",
+    "worker": "node ./build/app/worker.js"
   },
   "keywords": [],
   "author": "",

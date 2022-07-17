@@ -1,4 +1,3 @@
-import exp from "constants";
 
 export interface FileProps {
     name: string;
@@ -71,4 +70,10 @@ export interface categoryProps {
 
 export interface categoryInterface {
     getAll: () => Promise<categoryProps[]>;
+}
+
+export interface cliProps {
+    init: () => void;
+    processInput: (str: string) => void;
+    cliResponder: (str: string) => void;
 }
