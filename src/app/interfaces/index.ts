@@ -59,7 +59,7 @@ export interface createBlogPayload {
 export interface blogInterface {
     getAll: () => Promise<blogData[]>;
     createBlog: (payload: createBlogPayload) => Promise<blogData>;
-    deleteBlog: (blogId: string) => Promise<blogData>;
+    deleteBlog: (blogId: string, userId: string) => Promise<blogData>;
     addToView: (blogId: string) => Promise<blogData>;
 }
 

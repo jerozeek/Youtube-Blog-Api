@@ -1,8 +1,8 @@
 import CategoryModel from "../model/Category";
 import {categoryProps} from "../interfaces";
 
-const findByCategoryId = async (categoryId: string): Promise<categoryProps | any> => {
-    return CategoryModel.findById(categoryId);
+const findByCategoryId = async (id: string): Promise<categoryProps | any> => {
+    return CategoryModel.findById(id);
 }
 
 const createCategory = async (name: string): Promise<categoryProps | any> => {

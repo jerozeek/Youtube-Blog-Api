@@ -42,7 +42,7 @@ export class Connections {
         //import all the route
         routes(Connections.app);
 
-        const errorHandler: ErrorRequestHandler = (err, req, res) => {
+        const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
             res.status(err.status || 500).json({
                 error: {
                     status: err.status || 500,

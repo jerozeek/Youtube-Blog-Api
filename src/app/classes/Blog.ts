@@ -14,14 +14,14 @@ export default class Blog implements blogInterface {
         })
     }
 
-    public deleteBlog(blogId: string): Promise<blogData> {
+    public deleteBlog(blogId: string, userId: string): Promise<blogData> {
         return new Promise(async (resolve, reject) => {
-            blogServices.removeBlog(blogId).then((blog) => {
+            blogServices.removeBlog(blogId, userId).then((blog) => {
                 //returned the deleted blog data that was removed!!!
                 return resolve(blog);
             }).
             catch((error: Error) => {
-                reject({message: error.message});
+                reject({message: 'Something went wrong'});
             })
         })
     }

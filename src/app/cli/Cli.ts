@@ -50,7 +50,7 @@ let cli: cliProps = {
         let _interface = readline.createInterface({
             input: process.stdin,
             output: process.stdout,
-            prompt: '> '
+            prompt: '$ '
         });
 
         //Create an initiate prompt function

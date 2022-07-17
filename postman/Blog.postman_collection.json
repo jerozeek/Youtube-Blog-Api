@@ -1,0 +1,863 @@
+{
+	"info": {
+		"_postman_id": "5e1a4862-f061-4ad2-805d-656980399c9d",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11924234"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ezumahjeremiah@gmail.com\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"jerozeek1\",\n    \"email\": \"jerozeek2@gmail.com\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forget-Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"email\": \"jerozeek2@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/auth/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify-OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"email\": \"jerozeek2@gmail.com\",\n    \"otp\": 1918\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/auth/verify-otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jerozeek2@gmail.com\",\n    \"password\": \"1234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/auth/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDIyNDBlNWRiNzA1Zjg2ZjI5NzljZSIsImVtYWlsIjoiZXp1bWFoamVyZW1pYWhAZ21haWwuY29tIiwiaWF0IjoxNjU3OTM5MDI4LCJleHAiOjE2NTc5MzkwODh9.97vEJiOZ4yQRmWLm4s01kYGE1xglfMMJe-xJ_Y7xIB4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/v1/auth/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regenerate-Access-Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDE4ODZmNGJhN2EyM2VjMTMxMWJmZCIsImVtYWlsIjoiamVyb3plZWsyQGdtYWlsLmNvbSIsImlhdCI6MTY1NzkwMDg3NSwiZXhwIjoxNjU3OTAyNjc1fQ.zMRHOZxmEthUbr0S8xsD-X2QVTFelCtL7_Dzx_UdS7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDE4ODZmNGJhN2EyM2VjMTMxMWJmZCIsImVtYWlsIjoiamVyb3plZWsyQGdtYWlsLmNvbSIsImlhdCI6MTY1NzkwMTI5OCwiZXhwIjoxNjYzMDg1Mjk4fQ.ssLxQ1iZOZoiyI-Nwy9R4FnXPW41KULwj6oXDP4KPxQ\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/auth/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Fetch-Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/v1/category/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Fetch-Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/v1/category/get",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Jul 2022 17:53:22 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1658080438"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "696"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b8-r1Kzn/N3I9wkcD6W2VVzdIHXkHo\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"status\": 200,\n        \"message\": \"Categories fetched successfully\",\n        \"data\": [\n            {\n                \"_id\": \"62d3eb9b5fd2da952787e55b\",\n                \"name\": \"Health\"\n            },\n            {\n                \"_id\": \"62d3f1dd658762a418d65087\",\n                \"name\": \"Entertainment\",\n                \"createdAt\": \"2022-07-17T11:26:21.435Z\",\n                \"updatedAt\": \"2022-07-17T11:26:21.435Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"62d3f6cdfef816ff7b9acab1\",\n                \"name\": \"Business\",\n                \"createdAt\": \"2022-07-17T11:47:25.086Z\",\n                \"updatedAt\": \"2022-07-17T11:47:25.086Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"62d3f77438f224a7600e00c1\",\n                \"name\": \"Technologies\",\n                \"createdAt\": \"2022-07-17T11:50:12.164Z\",\n                \"updatedAt\": \"2022-07-17T11:50:12.164Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"62d3f8af4b18c1d4c1768e74\",\n                \"name\": \"Education\",\n                \"createdAt\": \"2022-07-17T11:55:27.117Z\",\n                \"updatedAt\": \"2022-07-17T11:55:27.117Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Entertainment\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/category/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Fetch-Blogs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDIyNDBlNWRiNzA1Zjg2ZjI5NzljZSIsImVtYWlsIjoiZXp1bWFoamVyZW1pYWhAZ21haWwuY29tIiwiaWF0IjoxNjU4MDgwNDEzLCJleHAiOjE2NTgwODM0MTN9.CsIVtmiQOCpRrue7H-OyuNWhnhJ7SD-pAatkuMYqIUQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/v1/blog/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Fetch-Blogs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/v1/blog/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"v1",
+										"blog",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Jul 2022 18:00:09 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1658080862"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "552"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"228-0qiwFsy1IEAEhpbhsGbTjQDCGno\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"status\": 200,\n        \"message\": \"Blog posts fetch successfully\",\n        \"data\": [\n            {\n                \"id\": \"62d44d26e79794876fffc5a7\",\n                \"title\": \"New Posts Title\",\n                \"content\": \"The new posts contents data goes here.\",\n                \"image\": \"https://res.cloudinary.com/northflix/image/upload/v1658080552/blog/x2fjva1id43o5yhweu9l.png\",\n                \"views\": 0,\n                \"category\": {\n                    \"id\": \"62d3eb9b5fd2da952787e55b\",\n                    \"name\": \"Health\"\n                },\n                \"author\": {\n                    \"id\": \"62d2240e5db705f86f2979ce\",\n                    \"email\": \"ezumahjeremiah@gmail.com\",\n                    \"image\": null,\n                    \"username\": \"jerozeek\",\n                    \"createdAt\": \"2022-07-16T02:35:58.428Z\"\n                },\n                \"createdAt\": \"2022-07-17T17:55:50.747Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create-Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDIyNDBlNWRiNzA1Zjg2ZjI5NzljZSIsImVtYWlsIjoiZXp1bWFoamVyZW1pYWhAZ21haWwuY29tIiwiaWF0IjoxNjU4MDgwNDEzLCJleHAiOjE2NTgwODM0MTN9.CsIVtmiQOCpRrue7H-OyuNWhnhJ7SD-pAatkuMYqIUQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "New Posts Title 1",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "The new posts contents data goes here. 1",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "62d3eb9b5fd2da952787e55b",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "62d2240e5db705f86f2979ce",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/ezumahjeremiah/Desktop/Projects/payluk-app/assets/images/slider/slider3.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/blog/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create-Post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "New Posts Title 1",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "The new posts contents data goes here. 1",
+											"type": "text"
+										},
+										{
+											"key": "categoryId",
+											"value": "62d3eb9b5fd2da952787e55b",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "62d2240e5db705f86f2979ce",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/ezumahjeremiah/Desktop/Projects/payluk-app/assets/images/slider/slider3.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/v1/blog/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"v1",
+										"blog",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Jul 2022 18:00:51 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1658080862"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "555"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22b-ZL7MUkYCHg7Gh1bQIUBIFAF3Rag\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"status\": 200,\n        \"message\": \"Blog post created successfully\",\n        \"data\": {\n            \"id\": \"62d44e56b94b0b16a2108316\",\n            \"title\": \"New Posts Title 1\",\n            \"content\": \"The new posts contents data goes here. 1\",\n            \"image\": \"https://res.cloudinary.com/northflix/image/upload/v1658080855/blog/hpxbprbh2liqo7axachn.png\",\n            \"views\": 0,\n            \"category\": {\n                \"id\": \"62d3eb9b5fd2da952787e55b\",\n                \"name\": \"Health\"\n            },\n            \"author\": {\n                \"id\": \"62d2240e5db705f86f2979ce\",\n                \"email\": \"ezumahjeremiah@gmail.com\",\n                \"image\": null,\n                \"username\": \"jerozeek\",\n                \"createdAt\": \"2022-07-16T02:35:58.428Z\"\n            },\n            \"createdAt\": \"2022-07-17T18:00:54.061Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete-Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDIyNDBlNWRiNzA1Zjg2ZjI5NzljZSIsImVtYWlsIjoiZXp1bWFoamVyZW1pYWhAZ21haWwuY29tIiwiaWF0IjoxNjU4MDgwNDEzLCJleHAiOjE2NTgwODM0MTN9.CsIVtmiQOCpRrue7H-OyuNWhnhJ7SD-pAatkuMYqIUQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/v1/blog/delete/62d44d26e79794876fffc5a7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"delete",
+								"62d44d26e79794876fffc5a7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete-Post",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/v1/blog/delete/62d44d26e79794876fffc5a7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"v1",
+										"blog",
+										"delete",
+										"62d44d26e79794876fffc5a7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Jul 2022 18:04:16 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1658081089"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "551"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"227-pejPfEIFfdNEZfQ8wF4X1ctRjGI\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"status\": 200,\n        \"message\": \"Blog post deleted successfully\",\n        \"data\": {\n            \"id\": \"62d44d26e79794876fffc5a7\",\n            \"title\": \"New Posts Title\",\n            \"content\": \"The new posts contents data goes here.\",\n            \"image\": \"https://res.cloudinary.com/northflix/image/upload/v1658080552/blog/x2fjva1id43o5yhweu9l.png\",\n            \"views\": 0,\n            \"category\": {\n                \"id\": \"62d3eb9b5fd2da952787e55b\",\n                \"name\": \"Health\"\n            },\n            \"author\": {\n                \"id\": \"62d2240e5db705f86f2979ce\",\n                \"email\": \"ezumahjeremiah@gmail.com\",\n                \"image\": null,\n                \"username\": \"jerozeek\",\n                \"createdAt\": \"2022-07-16T02:35:58.428Z\"\n            },\n            \"createdAt\": \"2022-07-17T17:55:50.747Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ADD Views",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDIyNDBlNWRiNzA1Zjg2ZjI5NzljZSIsImVtYWlsIjoiZXp1bWFoamVyZW1pYWhAZ21haWwuY29tIiwiaWF0IjoxNjU4MDgwNDEzLCJleHAiOjE2NTgwODM0MTN9.CsIVtmiQOCpRrue7H-OyuNWhnhJ7SD-pAatkuMYqIUQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/v1/blog/view/62d44e56b94b0b16a2108316",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"view",
+								"62d44e56b94b0b16a2108316"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ADD Views",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/v1/blog/view/62d44e56b94b0b16a2108316",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"v1",
+										"blog",
+										"view",
+										"62d44e56b94b0b16a2108316"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Jul 2022 18:06:16 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1658081211"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "561"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"231-2mDeQYiqv1Es83ziwJwn3pVaDfE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"status\": 200,\n        \"message\": \"Blog post views updated successfully\",\n        \"data\": {\n            \"id\": \"62d44e56b94b0b16a2108316\",\n            \"title\": \"New Posts Title 1\",\n            \"content\": \"The new posts contents data goes here. 1\",\n            \"image\": \"https://res.cloudinary.com/northflix/image/upload/v1658080855/blog/hpxbprbh2liqo7axachn.png\",\n            \"views\": 2,\n            \"category\": {\n                \"id\": \"62d3eb9b5fd2da952787e55b\",\n                \"name\": \"Health\"\n            },\n            \"author\": {\n                \"id\": \"62d2240e5db705f86f2979ce\",\n                \"email\": \"ezumahjeremiah@gmail.com\",\n                \"image\": null,\n                \"username\": \"jerozeek\",\n                \"createdAt\": \"2022-07-16T02:35:58.428Z\"\n            },\n            \"createdAt\": \"2022-07-17T18:00:54.061Z\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

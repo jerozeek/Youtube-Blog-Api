@@ -62,7 +62,7 @@ const deleteBlog = async (req: Request, res: Response) => {
 
         if (!id) return errorHandler(res, 400, 'No id was provided');
 
-        blogInstance.deleteBlog(id).then(async (result) => {
+        blogInstance.deleteBlog(id, req.user.id).then(async (result) => {
             return successHandler(res, 200, 'Blog post deleted successfully', await customBlogResponse(result));
         }).
         catch((err: Error) => {

@@ -30,8 +30,10 @@ export const customBlogResponse = async (data: blogData) => {
         title: data.title,
         content: data.content,
         image: data.image,
-        category: _getCategory(data.categoryId),
+        views: data.views,
+        category: await _getCategory(data.categoryId),
         author: await _getAuthor(data.author),
+        createdAt: data.createdAt
     }
 }
 

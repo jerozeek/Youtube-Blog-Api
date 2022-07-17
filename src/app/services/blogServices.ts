@@ -10,8 +10,8 @@ const getAll = async ():Promise<blogData[] | any> => {
     return BlogModel.find({}).sort({createdAt: -1});
 }
 
-const removeBlog = async (blogId: string): Promise<blogData | any> => {
-    const remove = await BlogModel.findByIdAndDelete(blogId);
+const removeBlog = async (blogId: string, userId: string): Promise<blogData | any> => {
+    const remove = await BlogModel.findOneAndDelete({_id: blogId, author: userId});
     if (remove){
         return remove;
     }
